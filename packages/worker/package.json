@@ -1,0 +1,25 @@
+{
+  "name": "@platform/worker",
+  "version": "1.0.0",
+  "description": "后台工作器 - 无头编译、缩略图生成、竞赛自动评测",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@turbowarp/scratch-vm": "^2.0.0",
+    "@turbowarp/scratch-storage": "^2.0.0",
+    "dotenv": "^16.3.1",
+    "axios": "^1.6.2",
+    "redis": "^4.6.11",
+    "sharp": "^0.33.0",
+    "canvas": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "ts-node-dev": "^2.0.0"
+  }
+}
