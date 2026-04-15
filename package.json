@@ -1,0 +1,44 @@
+{
+  "name": "scratch-platform",
+  "version": "1.0.0",
+  "description": "面向社区的在线Scratch编译器集成方案 - 基于TurboWarp引擎",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:engine\" \"npm run dev:web\" \"npm run dev:api\"",
+    "dev:engine": "npm run dev --workspace=@platform/tw-engine",
+    "dev:web": "npm run dev --workspace=@platform/web-client",
+    "dev:api": "npm run dev --workspace=@platform/api-server",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "lint": "eslint packages/**/src/**/*.{ts,tsx,js,jsx}",
+    "docker:up": "docker-compose -f docker/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f docker/docker-compose.yml down"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "typescript": "^5.3.0",
+    "eslint": "^8.55.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/scratch-platform.git"
+  },
+  "keywords": [
+    "scratch",
+    "turbowarp",
+    "compiler",
+    "education",
+    "community"
+  ],
+  "author": "",
+  "license": "MIT"
+}
